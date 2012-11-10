@@ -1,8 +1,23 @@
-<html>
-<head>
-	<title>Curso de rails</title>
-</head>
-<body>
-
-</body>
-</html>
+<h2>Funcionários</h2>
+<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Departamento</th>
+				<th>Admissão</th>
+				<th colspan="3"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @funcionarios.each do |funcionario| %>
+				<tr>
+					<td><%= funcionario.nome %></td>
+					<td><%= funcionario.departamento.nome if funcionario.departamento %></td>
+					<td><%= funcionario.nome %></td>
+					<td><%= button_to 'Show', funcionario, :class=>'btn' %></td>
+				    <td><%= button_to 'Edit', edit_funcionario_path(funcionario), :class=>'btn' %></td>
+				    <td><%= button_to 'Destroy', funcionario, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'btn' %></td>
+				</tr>
+			<% end %>	
+		</tbody>
+</table>

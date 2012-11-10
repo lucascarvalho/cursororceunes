@@ -7,8 +7,31 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<header>
+		<div class="container header">
+			<h1>Curso Rails SAMA</h1>
+		</div>
+	</header>
+	<nav>
+		<div class="container">
+			<ul id="menu">
+				<li class="first">
+					<a href="departamentos" <% current_page? puts "class='active'" %>>Departamentos</a>
+				</li>
+				<li>
+					<a href="funcionarios">Funcionários</a>
+				</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</nav>
+	<div class="container home ">
+		<%= yield %>
+	</div>
+	<footer>
+		<div class="container">
+			Curso ministrado por <a href="http://github.com/pbalduino" target="_blank">Plínio Balduíno</a>
+		</div>
+	</footer>
 </body>
 </html>
