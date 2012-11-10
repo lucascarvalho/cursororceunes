@@ -1,0 +1,2 @@
+class FuncionariosController < ApplicationController
+end
