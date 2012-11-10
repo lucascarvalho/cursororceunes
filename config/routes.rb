@@ -1,6 +1,6 @@
 Curso::Application.routes.draw do
   resources :departamentos
-
+  resources :funcionarios
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
