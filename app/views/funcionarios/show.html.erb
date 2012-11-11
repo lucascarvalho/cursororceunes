@@ -2,7 +2,7 @@
 	<h2>Funcionário</h2>
 	<p>
 		<strong>Nome</strong>
-		<%= @funcionario.nome %>
+		<%= @funcionario.nome if @funcionario.nome%>
 	</p>
 	<p>
 		<strong>Departamento</strong>
@@ -10,7 +10,7 @@
 	</p>
 	<p>
 		<strong>Admissão</strong>
-		<%= @funcionario.admissao.strftime("%d/%m/%Y") %>
+		<%= @funcionario.admissao.strftime("%d/%m/%Y") if @funcionario.admissao %>
 	</p>
 	<a href="/funcionarios" class="btn">Voltar</a>
     <%= link_to 'Editar', edit_funcionario_path(@funcionario), :class=>'btn' %>

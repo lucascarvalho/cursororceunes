@@ -42,6 +42,17 @@ class FuncionariosController < ApplicationController
 	      
 	end
 
+	def create
+    	@funcionario = Funcionario.new(params[:funcionario])
+	 
+		if @funcionario.save
+			redirect_to @funcionario, notice: 'Funcionário criado com sucesso.'
+		else
+			render action: "new"
+		end
+	
+	end
+
 	private
 		
 		def text_to_date(text)
