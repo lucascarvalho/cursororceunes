@@ -28,7 +28,6 @@ class FuncionariosController < ApplicationController
 	    end
 	end
 
-
 	private
 		
 		def text_to_date(text)
