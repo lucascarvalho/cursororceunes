@@ -1,0 +1,17 @@
+
+	<h2>Funcionário</h2>
+	<p>
+		<strong>Nome</strong>
+		<%= @funcionario.nome %>
+	</p>
+	<p>
+		<strong>Departamento</strong>
+		<%= @funcionario.departamento.nome if @funcionario.departamento %>
+	</p>
+	<p>
+		<strong>Admissão</strong>
+		<%= @funcionario.admissao.strftime("%d/%m/%Y") %>
+	</p>
+	<a href="/funcionarios" class="btn">Voltar</a>
+    <td><%= link_to 'Editar', edit_funcionario_path(@funcionario), :class=>'btn' %></td>
+    <td><%= link_to 'Detonar', @funcionario, method: :delete, data: { confirm: 'Detonar agora mano?' }, :class=>'btn' %></td>

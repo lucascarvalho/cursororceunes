@@ -1,0 +1,24 @@
+<%= form_for(@funcionario, :html => {:class => "form-horizontal"}) do |f| %>
+	<div class="control-group">
+		<%= f.label :nome, "Nome: ", :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :nome %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :departamento_id, "Departamento: ", :class => "control-label" %>
+		<div class="controls">
+			<%= f.select :departamento_id, options_from_collection_for_select(@departamentos, 'id', 'nome', @funcionario.departamento_id) %>
+		</div>
+	</div>
+	<div class="control-group">
+		<%= f.label :admissao, "Admissao :", :class => "control-label" %>
+		<div class="controls">
+			<%= f.text_field :admissao, :class => "date", :value => @funcionario.admissao.strftime("%d/%m/%Y") %>
+		</div>
+	</div>
+	<div class="form-actions">
+		<%= f.submit :class => "btn btn-primary", :value => "Gravar" %>
+		<%= link_to "Voltar", funcionarios_path, :class => "btn" %>
+	</div>
+<% end %>
