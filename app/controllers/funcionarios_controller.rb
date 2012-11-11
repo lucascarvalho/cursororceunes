@@ -28,6 +28,11 @@ class FuncionariosController < ApplicationController
 	    end
 	end
 
+	def new
+		@funcionario = Funcionario.new
+		@departamentos = Departamento.all
+	end
+
 	private
 		
 		def text_to_date(text)
