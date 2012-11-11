@@ -13,5 +13,5 @@
 		<%= @funcionario.admissao.strftime("%d/%m/%Y") %>
 	</p>
 	<a href="/funcionarios" class="btn">Voltar</a>
-    <td><%= link_to 'Editar', edit_funcionario_path(@funcionario), :class=>'btn' %></td>
-    <td><%= link_to 'Detonar', @funcionario, method: :delete, data: { confirm: 'Detonar agora mano?' }, :class=>'btn' %></td>
+    <%= link_to 'Editar', edit_funcionario_path(@funcionario), :class=>'btn' %>
+    <%= link_to 'Detonar', @funcionario, method: :delete, data: { confirm: 'Detonar agora mano?' }, :class=>'btn' %>
