@@ -33,6 +33,15 @@ class FuncionariosController < ApplicationController
 		@departamentos = Departamento.all
 	end
 
+	def destroy
+	
+	    @funcionario = Funcionario.find(params[:id])
+	    @funcionario.destroy
+
+	    redirect_to funcionarios_url
+	      
+	end
+
 	private
 		
 		def text_to_date(text)
